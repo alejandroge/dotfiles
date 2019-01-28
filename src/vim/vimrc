@@ -35,7 +35,7 @@ set cpoptions+=$               " When making a change, don't
                                " put a `$` sign at the end of
                                " the changed text.
 
-set colorcolumn=73             " Highlight certain column(s).
+set colorcolumn=100            " Highlight certain column(s).
 set cursorline                 " Highlight the current line.
 set directory=~/.vim/swaps     " Set directory for swap files.
 set encoding=utf-8 nobomb      " Use UTF-8 without BOM.
@@ -92,15 +92,14 @@ set synmaxcol=2500             " Limit syntax highlighting (this
                                " avoids the very slow redrawing
                                " when files contain long lines).
 
-set tabstop=4                  " ┐
-set softtabstop=4              " │ Set global <TAB> settings.
-set shiftwidth=4               " │
+set tabstop=2                  " ┐
+set softtabstop=2              " │ Set global <TAB> settings.
+set shiftwidth=2               " │
 set expandtab                  " ┘
 
 set ttyfast                    " Enable fast terminal connection.
 set undodir=~/.vim/undos       " Set directory for undo files.
 set undofile                   " Automatically save undo history.
-set virtualedit=all            " Allow cursor to be anywhere.
 
 set visualbell                 " ┐
 set noerrorbells               " │ Disable beeping and window flashing
@@ -651,6 +650,14 @@ set statusline+=\ (%P)\        " Percent through file
 "
 "  [1] [master] [vim/vimrc][vim][unix:utf-8]            17,238/381 (59%)
 
+" This two configurations make splitting more natural
+set splitbelow
+set splitright
+
+" Change cursor to easily identify when editing
+let &t_SI.="\e[5 q"
+let &t_SR.="\e[4 q"
+let &t_EI.="\e[1 q"
 
 " ----------------------------------------------------------------------
 " | Local Settings                                                     |

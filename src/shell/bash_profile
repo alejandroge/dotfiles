@@ -52,6 +52,9 @@ unset -f source_bash_files
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # Clear system messages (system copyright notice, the date
 # and time of the last login, the message of the day, etc.).
 
